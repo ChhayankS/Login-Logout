@@ -1,7 +1,5 @@
-import os
-import threading
 from flask import Flask, render_template_string, request, redirect, url_for, session
-from IPython.display import display, HTML
+import os
 
 app = Flask(__name__)
 
@@ -258,10 +256,5 @@ def logout():
     session.pop('user', None)
     return redirect(url_for('login'))
 
-# Default route to keep app alive
-def keep_alive():
-    return "App is running!"
-
-# Run the Flask app (this will be used for local development)
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
